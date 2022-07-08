@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import { images, COLORS, SIZES, FONTS } from "../constants";
 import { LinearGradient } from "expo-linear-gradient";
-import CustomBotton from "../components";
+import CustomBotton from "../components/CustomButton";
 
 const Login = ({ navigation }) => {
   function renderHeader() {
@@ -69,9 +69,25 @@ const Login = ({ navigation }) => {
           }}
         >
           {/* Login */}
+
           <CustomBotton
             buttonText="Login"
+            buttonContainerStyle={{ paddingVertical: 18, borderRadius: 20 }}
             colors={[COLORS.darkGreen, COLORS.lime]}
+            onPress={() => navigation.replace("Home")}
+          />
+
+          {/* SignUp */}
+          <CustomBotton
+            buttonText="Sign Up"
+            buttonContainerStyle={{
+              marginTop: SIZES.radius,
+              paddingVertical: 18,
+              borderRadius: 20,
+              borderColor: COLORS.darkLime,
+              borderWidth: 1,
+            }}
+            colors={[]}
             onPress={() => navigation.replace("Home")}
           />
         </View>
